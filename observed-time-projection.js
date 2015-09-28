@@ -16,6 +16,7 @@ module.exports= function( o, valMap, keyMap, mode, _map){
 	valMap= valMap|| function( v){ return v}
 	keyMap= keyMap|| function( v, k){ return k}
 	_map= _map|| new Map()
+	_map.tick= _map.tick|| 0
 	var
 	  insert,
 	  remove
@@ -63,6 +64,7 @@ module.exports= function( o, valMap, keyMap, mode, _map){
 	}
 
 	Object.observe( o, function( changes){
+		++_map.tick
 		for( var i= 0; i< changes.length; ++i){
 			var
 			  change= changes[ i],
@@ -88,5 +90,11 @@ module.exports= function( o, valMap, keyMap, mode, _map){
 	function get( key){
 		return _map.get( key)
 	}
+	Object.defineProperty(get, "tick", {
+		get: function(){
+			return _map.tick
+		},
+		enumerable: true
+	})
 	return get
 }

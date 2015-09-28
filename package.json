@@ -1,0 +1,19 @@
+{
+	"name": "observed-time-projection",
+	"version": "0.0.0",
+	"description": "",
+	"main": "observed-time-projection.js",
+	"scripts": {
+		"test": "node .test/",
+		"files": "find . -path ./node_modules -prune -o -path ./\\.git -prune -o -name '.*' -o -type f -print"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://archive.voodoowarez.com/observed-time-projection"
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"tape": "^4.2.0"
+	}
+}

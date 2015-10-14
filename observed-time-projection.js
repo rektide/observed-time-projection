@@ -58,7 +58,7 @@ module.exports= function( o, valMap, keyMap, mode, _map){
 	for(var _k in o){
 		var
 		  _v= o[ _k],
-		  key= keyMap( _v, _k)
+		  key= keyMap( _v, _k),
 		  val= valMap( _v, _k)
 		insert( key, val)
 	}

@@ -1,7 +1,7 @@
 var tape= require("tape"),
   obsProj= require("..")
 
-tape("add-1", function(t){
+tape("delete-1", function(t){
 	var
 	  o= {
 		a: 2,
